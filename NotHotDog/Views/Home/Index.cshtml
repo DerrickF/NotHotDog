@@ -1,0 +1,52 @@
+﻿@{
+    if (ViewBag.userImage)
+    {
+        <img src="uploads/userUploadedImage.jpg" class="img-thumbnail" />
+    }
+    else
+    {
+        <img id="image-preview" />
+    }
+}
+
+@{
+    if (@ViewBag.isHotDog && @ViewBag.userImage)
+    {
+        <h1>Hotdog</h1>
+    }
+    else if (@ViewBag.userImage)
+    {
+        <h1>Not a hotdog</h1>
+    }
+}
+
+<form method="post" asp-action="Index" asp-controller="Home" enctype="multipart/form-data">
+    <label class="btn btn-default btn-file">
+        Add Image <input id="fileUpload" type="file" name="file" style="display: none;">
+    </label>
+    <br/>
+    <br />
+    <button type="submit" class="btn btn-primary">Analyze</button>
+</form>
+
+<script type="text/javascript">
+    
+    document.getElementById("fileUpload").onchange = function () {
+        var reader = new FileReader();
+
+        reader.onload = function (e) {
+            // get loaded data and render thumbnail.
+            var image = document.getElementById("image-preview");
+            image.src = e.target.result;
+            image.className = 'img-thumbnail';
+
+        };
+
+        // read the image file as a data URL.
+        reader.readAsDataURL(this.files[0]);
+    };
+</script>
+
+
+
+
