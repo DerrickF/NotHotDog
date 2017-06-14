@@ -1,11 +1,10 @@
-﻿
-
-/* Wrapping element */
+﻿/* Wrapping element */
 /* Set some basic padding to keep content from hitting the edges */
 .body-content {
     padding-left: 15px;
     padding-right: 15px;
 }
+
 
 .img-preview {
     display: block;
@@ -13,12 +12,6 @@
     margin: auto;
     width: 50%;
 }
-
-html, body {
-    height: 100%;
-    margin: 0;
-}
-
 
 .btn-file {
     position: relative;
@@ -39,4 +32,46 @@ html, body {
     background: white;
     cursor: inherit;
     display: block;
+}
+
+.full {
+    background: url('http://placehold.it/1920x1080') no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
+}
+
+
+#header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 100px;
+    /*background-color: #abcdef;*/
+}
+
+#footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100px;
+    /*background-color: #abcdef;*/
+}
+
+#content {
+    position: fixed;
+    top: 100px;
+    bottom: 100px;
+    left: 0;
+    right: 0;
+    /*background-color: #F63;*/
+    overflow: auto;
+    text-align: center;
+}
+
+.center-form {
+    margin-top: 50%
 }
