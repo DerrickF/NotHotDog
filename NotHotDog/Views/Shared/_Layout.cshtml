@@ -18,22 +18,11 @@
     </environment>
     @Html.Raw(JavaScriptSnippet.FullScript)
 </head>
-<body class="full">
-    <div class="container body-content">
-        <div id="header">
-        </div>
-        <div id="content" class="centered">
-            @RenderBody()
-        </div>
-        <div id="footer">
-            <hr />
-            <footer>
-                <p>&copy; 2017 - NotHotDog</p>
-            </footer>
-        </div>
-    </div>
+<body class="full">      
+    @RenderBody()
+  
 
-    <environment names="Development">
+<environment names="Development">
         <script src="~/lib/jquery/dist/jquery.js"></script>
         <script src="~/lib/bootstrap/dist/js/bootstrap.js"></script>
         <script src="~/js/site.js" asp-append-version="true"></script>

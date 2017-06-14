@@ -7,6 +7,10 @@
   <PropertyGroup>
     <PackageTargetFallback>$(PackageTargetFallback);portable-net45+win8+wp8+wpa81;</PackageTargetFallback>
   </PropertyGroup>
+
+  <ItemGroup>
+    <Content Include="wwwroot\images\foodBackground-76527608.jpg" />
+  </ItemGroup>
   <ItemGroup>
     <PackageReference Include="AWSSDK.Extensions.NETCore.Setup" Version="3.3.1" />
     <PackageReference Include="AWSSDK.Rekognition" Version="3.3.5" />
@@ -21,7 +25,6 @@
     <DotNetCliToolReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Tools" Version="1.0.1" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="wwwroot\images\" />
     <Folder Include="wwwroot\uploads\" />
     <Folder Include="wwwroot\uploads\" />
   </ItemGroup>
