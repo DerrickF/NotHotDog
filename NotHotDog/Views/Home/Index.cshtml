@@ -1,48 +1,24 @@
-﻿<div class="center-form">
-    @{
-        if (ViewBag.userImage)
-        {
-            <img src="uploads/userUploadedImage.jpg" class="img-thumbnail" />
-        }
-        else
-        {
-            <img id="image-preview" />
-        }
-    }
-
-    @{
-        if (@ViewBag.isHotDog && @ViewBag.userImage)
-        {
-            <h1>Hotdog</h1>
-        }
-        else if (@ViewBag.userImage)
-        {
-            <h1>Not a hotdog</h1>
-        }
-    }
-
+﻿<div style="background-color: #C00000; opacity: 0.75 ;border: black; height: 12vw; text-align: center; color: white; font-size: 8vw;">SeeFood.Net</div>
+<div class="center-form">
     <form class="form" method="post" asp-action="Index" asp-controller="Home" enctype="multipart/form-data">
-        <label class="btn btn-default btn-file">
-            Add Image <input id="fileUpload" type="file" name="file" style="display: none;">
-        </label>
-        <br />
-        <br />
-        <button type="submit" class="btn btn-primary">Analyze</button>
+        <p>
+            <label class="btn btn-lg btn-default btn-file">
+                Add Image <input id="fileUpload" type="file" name="file" style="display: none;">
+            </label>
+        </p>
+        <p>
+            <button type="submit" class="btn btn-lg btn-danger">Analyze</button>
+        </p>
     </form>
 
     <script type="text/javascript">
-
         document.getElementById("fileUpload").onchange = function () {
             var reader = new FileReader();
-
             reader.onload = function (e) {
-                // get loaded data and render thumbnail.
-                var image = document.getElementById("image-preview");
-                image.src = e.target.result;
-                image.className = 'img-thumbnail';
-
+                // get loaded data and background.
+                var background = document.getElementsByTagName("body")[0];
+                background.style.backgroundImage = "url(" + e.target.result + ")";
             };
-
             // read the image file as a data URL.
             reader.readAsDataURL(this.files[0]);
         };
