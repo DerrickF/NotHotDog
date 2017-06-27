@@ -22,8 +22,6 @@ namespace NotHotDog.Controllers
 
         public IActionResult Index()
         {
-            ViewBag.isHotDog = false;
-            ViewBag.userImage = false;
             return View();
         }
 
@@ -76,9 +74,7 @@ namespace NotHotDog.Controllers
                     isHotDot = true;
             }
 
-            ViewBag.isHotDog = isHotDot;
-            ViewBag.userImage = true;
-            return View();
+            return View(isHotDot ? "Hotdog" : "NotHotdog");
         }
     }
 }
