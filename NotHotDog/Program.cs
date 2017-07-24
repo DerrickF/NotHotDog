@@ -14,9 +14,11 @@ namespace NotHotDog
             var host = new WebHostBuilder()
                 .UseKestrel()
                 .UseContentRoot(Directory.GetCurrentDirectory())
+                .UseSetting("detailedErrors", "true")
                 .UseIISIntegration()
+                .UseApplicationInsights()
                 .UseStartup<Startup>()
-                //.UseApplicationInsights()
+                .CaptureStartupErrors(true)
                 .Build();
 
             host.Run();

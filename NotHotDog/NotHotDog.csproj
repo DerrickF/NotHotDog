@@ -6,6 +6,8 @@
 
   <PropertyGroup>
     <PackageTargetFallback>$(PackageTargetFallback);portable-net45+win8+wp8+wpa81;</PackageTargetFallback>
+    <ApplicationInsightsResourceId>/subscriptions/19f8b80b-be3d-4f5e-83ee-6c0ac3a51f12/resourcegroups/Default-ApplicationInsights-EastUS/providers/microsoft.insights/components/NotHotDog</ApplicationInsightsResourceId>
+    <ApplicationInsightsAnnotationResourceId>/subscriptions/19f8b80b-be3d-4f5e-83ee-6c0ac3a51f12/resourcegroups/Default-ApplicationInsights-EastUS/providers/microsoft.insights/components/NotHotDog</ApplicationInsightsAnnotationResourceId>
   </PropertyGroup>
 
   <ItemGroup>
@@ -14,6 +16,7 @@
   <ItemGroup>
     <PackageReference Include="AWSSDK.Extensions.NETCore.Setup" Version="3.3.1" />
     <PackageReference Include="AWSSDK.Rekognition" Version="3.3.5" />
+    <PackageReference Include="Microsoft.ApplicationInsights.AspNetCore" Version="2.1.0" />
     <PackageReference Include="Microsoft.AspNetCore" Version="1.1.2" />
     <PackageReference Include="Microsoft.AspNetCore.Mvc" Version="1.1.3" />
     <PackageReference Include="Microsoft.AspNetCore.StaticFiles" Version="1.1.2" />
@@ -26,6 +29,9 @@
   <ItemGroup>
     <Folder Include="wwwroot\uploads\" />
     <Folder Include="wwwroot\uploads\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services" />
   </ItemGroup>
 
 </Project>
