@@ -1,4 +1,5 @@
-﻿using Amazon.Rekognition;
+﻿using System;
+using Amazon.Rekognition;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
@@ -26,7 +27,7 @@ namespace NotHotDog
         {
             // Add framework services.
             services.AddMvc();
-
+        
             // Add S3
             services.AddDefaultAWSOptions(Configuration.GetAWSOptions());
             services.AddAWSService<IAmazonRekognition>();
